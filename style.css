@@ -1,0 +1,17 @@
+/* Styles go here */
+body{
+  padding:20px;
+  margin: 10px;
+  border: 3px solid #d8ff7f;
+}
+th{
+  background-color: #71fc8f;
+}
+
+tr:nth-child(even) {
+  background-color: #ffc6c6;
+}
+
+tr:nth-child(odd){
+  background-color: #abf1fc;
+}

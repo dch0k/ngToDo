@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="taskapp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>TASK APP</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div ng-controller="MainController as mainVm">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-6">
+
+          <form ng-submit="mainVm.addTask()">
+            <div class="form-group">
+              <label for="taskName">Task Name</label>
+              <input type="text" class="form-control" id="taskName" ng-model="mainVm.newTask.taskName" placeholder="Your Task Name">
+            </div>
+
+            <button type="submit" class="btn btn-success">Add Task</button>
+          </form>
+
+        </div>
+
+        <div class="col-sm-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Task Name</th>
+                <th>Done?</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!--task is iterater name-> like 'i' in for loop-->
+              <tr ng-repeat="task in mainVm.tasks">
+                <td>{{task.taskName}}</td>
+                <td><i ng-click="mainVm.deleteTask($index)" class="glyphicon glyphicon-thumbs-up"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.9/angular.js" data-semver="1.4.9"></script>
+  <script src="app.js"></script>
+  <script src="main.controller.js"></script>
+</body>
+
+</html>
