@@ -7,11 +7,13 @@ body{
 th{
   background-color: #71fc8f;
 }
-
 tr:nth-child(even) {
   background-color: #ffc6c6;
 }
-
 tr:nth-child(odd){
   background-color: #abf1fc;
+}
+i{
+  cursor: hand;
+  cursor: pointer;
 }
